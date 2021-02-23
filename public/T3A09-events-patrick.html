@@ -1,6 +1,9 @@
-<h1 align="center">T3A09 Events by Patrick</h1>
+<html>
+<body style="color:#ffffcc;background-color:black;">
+<h1 align="center">T3A09 JavaScript Events by Patrick</h1>
 
-Output span:<span id="mySpan01">...</span><br>
+<ol>
+<li><p style="color:#ff3300;">Output span:</p><span id="mySpan01">...</span><br><br>
 
 Traditional event: <input type=button value="onclick event" onclick="{
    // alert(' Hi from onclick');
@@ -9,8 +12,56 @@ Traditional event: <input type=button value="onclick event" onclick="{
 }"><br><br>
 
 
-This is <b>bold</b> this isn't<br>
+<li>This is <b>bold</b> this isn't<br>
 
 this is <b onMouseOver="{
    document.getElementById('mySpan01').innerHTML = ' Hi from MouseOver'
 }">bold and onMouseOver</b> and this isn't<br><br>
+
+
+<li>Current time: <button onclick="document.getElementById('T1').innerHTML=Date()">Your Current Time</button>
+
+<p id="T1"></p><br><br>
+
+
+
+<li><b>Key detector:</b> <input type="text" id="field" placeholder="Type here"> 
+    <p id="status"></p> 
+  
+    <script> 
+        var key_pressed = 
+            document.getElementById('field'); 
+  
+        key_pressed 
+            .addEventListener("keydown", onKeyDown); 
+        key_pressed 
+            .addEventListener("keypress", onKeyPress); 
+        key_pressed 
+            .addEventListener("keyup", onKeyUp); 
+  
+        function onKeyDown(event) { 
+            document.getElementById("status") 
+                .innerHTML = 'keydown: ' 
+                + event.key + '<br>' 
+        } 
+        function onKeyPress(event) { 
+            document.getElementById("status") 
+                .innerHTML += 'keypress: ' 
+                + event.key + '<br>' 
+        } 
+        function onKeyUp(event) { 
+            document.getElementById("status") 
+                .innerHTML += 'keyup: ' 
+                + event.key + '<br>' 
+        } 
+    </script> Detects the key pressed, down, and up. <i>(works when multiple keys are pressed*)</i><br><br>
+
+<li>
+
+
+
+
+
+
+</body>
+</html>
