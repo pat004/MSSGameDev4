@@ -1,0 +1,90 @@
+<body style="background-color:black;color:white;font-size:18px;">
+<h1 align=center>T3A10 inOut by Patrick</h1>
+
+<ol>
+<li> Store this input variable into x:
+<input id="myText01" type=text value=3>
+<br><br>
+<input type=button value="run first" onclick="{
+    x = document.getElementById('myText01').value
+    //alert('x: ' + x)
+    document.getElementById('mySpan01').innerHTML = x
+}">
+<br><br>
+
+<span id="mySpan01">...</span><br><br>
+
+
+
+
+<li> <input type=button value="Square" onclick="{
+    x = document.getElementById('myText01').value
+    document.getElementById('mySpan02').innerHTML = x*x
+}">
+x = <span id='mySpan02'>...</span>
+<br><br>
+
+
+
+<li> <input type=button value="Subtract 1" onclick="{
+    x = document.getElementById('myText01').value
+    document.getElementById('mySpan03').innerHTML = x-1
+}">
+x = <span id='mySpan03'>...</span>
+<br><br>
+
+
+
+<li> <input type=button value="Add 1" onclick="{
+    x = document.getElementById('myText01').value
+    document.getElementById('mySpan04').innerHTML = x-0+1
+}">
+x = <span id='mySpan04'>...</span>
+<br><br>
+
+
+
+<li> <input type=button value="Half" onclick="{
+    x = document.getElementById('myText01').value
+    document.getElementById('mySpan05').innerHTML = x/2
+}">
+x = <span id='mySpan05'>...</span>
+<br><br>
+
+
+
+<li> <input type="text" id="myText02" value="Steve" size="30"><br><br>  
+    
+<input id="myButton01" type="button" value="Input / Output" onclick="{
+      document.getElementById('mySpan06').innerHTML = document.getElementById('myText02').value 
+}"><br><br>
+
+Your name is <span id='mySpan06'>...</span>
+<br><br>
+
+
+
+<li>
+<input id="myInput00" type="button" value="Input" onclick="{
+      document.getElementById('mySpan07').innerHTML = 'Output'                                                           
+}"><br><br>
+
+<span id='mySpan07'>...</span>
+<br><br>
+
+
+
+<li><input type="text" id="myText03" value="Canada" size="30"><br><br>  
+    
+<input id="myButton02" type="button" value="Input / Output" onclick="{
+      document.getElementById('mySpan08').innerHTML = document.getElementById('myText03').value
+}"><br><br>
+
+You were born in: <span id='mySpan08'>...</span>
+
+
+
+
+
+
+
