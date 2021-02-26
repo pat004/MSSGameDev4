@@ -1,11 +1,29 @@
 <html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    html {
+      height: 100%;
+      overflow: hidden;
+    }
+
+    button1 {
+      border: 0;
+      background-color: white;
+    }
+  </style>
+</head>
+
+
+
+
 <body style="color:#ffffcc;background-color:black;">
 <h1 align="center">T3A09 JavaScript Events by Patrick</h1>
 
 <ol>
-<li><p style="color:#ff3300;">Output span:</p><span id="mySpan01">...</span><br><br>
+<li>Output span:</p><span id="mySpan01">...</span><br><br>
 
-Traditional event: <input type=button value="onclick event" onclick="{
+Traditional event: <p style="color:red;"><input type=button value="onclick event" onclick="{
    // alert(' Hi from onclick');
    document.getElementById('mySpan01').innerHTML = ' Hi from onclick'
 
@@ -55,6 +73,33 @@ this is <b onMouseOver="{
                 + event.key + '<br>' 
         } 
     </script> Detects the key pressed, down, and up. <i>(works when multiple keys are pressed*)</i><br><br>
+
+
+
+<li>
+<button id="button1">Click for Colour Change</button>
+
+  <script>
+
+  var button = document.querySelector('button1');
+  var html = document.querySelector('html');
+
+  function random(number) {
+    return Math.floor(Math.random() * number);
+  }
+
+  button1.onclick = function() {
+    var rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+    button1.style.backgroundColor = rndCol;
+  };
+
+  button1.onauxclick = function(e) {
+    e.preventDefault();
+    var rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+    button1.style.color = rndCol;
+  }
+
+  </script><br><br>
 
 <li>
 
