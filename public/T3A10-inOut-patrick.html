@@ -1,6 +1,6 @@
 <body style="background-color:black;color:white;font-size:18px;">
 <h1 align=center>T3A10 inOut by Patrick</h1>
-
+<form>
 <ol>
 <li> Store this input variable into x:
 <input id="myText01" type=text value=3>
@@ -80,7 +80,24 @@ Your name is <span id='mySpan06'>...</span>
       document.getElementById('mySpan08').innerHTML = document.getElementById('myText03').value
 }"><br><br>
 
-You were born in: <span id='mySpan08'>...</span>
+You were born in: <span id='mySpan08'>...</span><br><br>
+
+
+
+<li> Set Age:
+<input id="myText04" type=text value=21>
+<br><br>
+<input type=button value="run first" onclick="{
+    x = document.getElementById('myText04').value
+    //alert('x: ' + x)
+    document.getElementById('mySpan09').innerHTML = 2021 - x
+}">
+<br><br>
+
+You were born around the year: <span id="mySpan09">...</span><br><br>
+
+<input type=reset><input type=submit>
+</form>
 
 
 
