@@ -3,7 +3,7 @@
 </head>
 <body style="background-color:black;color:#fffad9;">
 <h1 align=center>T3A12 Decisions by Patrick</h1>
-
+<form>
 <center>
 <pre>
 || means OR
@@ -99,12 +99,12 @@
 
 <li><input id="myText06" type=text value=5>
 <br><br>
-<input type=button value="Math +/- intervals" onclick="{
+<input type=button value="Flip +/-" onclick="{
     myA = document.getElementById('myText06').value
     if (myA > 0){
-    document.getElementById('mySpan06').innerHTML = myA*-100
+    document.getElementById('mySpan06').innerHTML = myA*-1
     } else {
-    document.getElementById('mySpan06').innerHTML = myA*-100
+    document.getElementById('mySpan06').innerHTML = myA*-1
     }
 }">
 <br><br>
@@ -114,6 +114,51 @@
 
 
 
+<li><input id="myText07a" type=text value=1><input id="myText07b" type=text value=2>
+<br><br>
+<input type=button value="Check" onclick="{
+    myTa = document.getElementById('myText07a').value
+    myTb = document.getElementById('myText07b').value
+    myTemp = '...'
+    if (myTa > 0 && myTb > 0){
+    myTemp = 'Variables are greater than zero'
+    } else {
+    myTemp = 'Both variables are not greater than zero'
+    }
+    document.getElementById('mySpan07').innerHTML = myTemp
+
+}">
+<br><br>
+
+<span id="mySpan07">...</span><br><br>
+
+
+
+
+
+<li><input id="myText08a" type=text value=1><input id="myText08b" type=text value=2>
+<br><br>
+<input type=button value="Check" onclick="{
+    myNa = document.getElementById('myText08a').value
+    myNb = document.getElementById('myText08b').value
+    myTemp = '...'
+    if (myNa == myNb){
+    alert('Variables are Equal')
+    } else {
+    myTemp = 'Variables are inequal'
+    }
+    document.getElementById('mySpan08').innerHTML = myTemp
+
+}">
+<br><br>
+
+<span id="mySpan08">...</span><br><br>
+
+
+
+
+<input type=reset value="Reset Values">
 </center>
+<form>
 </body>
 </html>
