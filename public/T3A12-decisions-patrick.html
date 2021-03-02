@@ -87,12 +87,29 @@
     document.getElementById('mySpan05').innerHTML = x*x
     if (x < 0){
     alert('Value is too low')
+    document.getElementById('mySpan05').innerHTML = NaN
     }
 }">
 <br><br>
 
 <span id="mySpan05">...</span><br><br>
 
+
+
+
+<li><input id="myText06" type=text value=5>
+<br><br>
+<input type=button value="Math +/- intervals" onclick="{
+    myA = document.getElementById('myText06').value
+    if (myA > 0){
+    document.getElementById('mySpan06').innerHTML = myA*-100
+    } else {
+    document.getElementById('mySpan06').innerHTML = myA*-100
+    }
+}">
+<br><br>
+
+<span id="mySpan06">...</span><br><br>
 
 
 
