@@ -1,0 +1,102 @@
+<html>
+<head>
+</head>
+<body style="background-color:black;color:#fffad9;">
+<h1 align=center>T3A12 Decisions by Patrick</h1>
+
+<center>
+<pre>
+|| means OR
+&& means AND
+! means NOT
+</pre>
+<ol>
+<li><input id="myText01" type=text value=3><br>
+<input type=button value="Show X" onclick="{
+    x = document.getElementById('myText01').value
+    myTemp = '.............'
+    if (x >= 2){myTemp = 'Something'}
+    document.getElementById('mySpan01').innerHTML = myTemp
+
+}"><br><br>
+<span id="mySpan01">...</span><br><br>
+
+
+<li><input id="myText02a" type=text value=3>
+<input id="myText02b" type=text value=-5><br>
+<input type=button value="Decide x and y" onclick="{
+    myX = document.getElementById('myText02a').value
+    myY = document.getElementById('myText02b').value
+    myTemp = '............'
+    if (myX > 2 && myY < -4){
+       myTemp = 'x greater than 2, y less than -4' 
+    } else {
+       myTemp = 'not'
+    }
+    document.getElementById('mySpan02').innerHTML = myTemp
+
+}"><br>
+<span id="mySpan02">...</span><br><br>
+   
+
+
+
+<li><input id="myText03" type=text value=1>
+<input type=button value="Alert if not 1" onclick="{
+     myW = document.getElementById('myText03').value
+     myTemp = '........'
+     if (myW != 1){
+     alert('Hello World!')
+     } else {
+        myTemp = 'Variable Is 1'
+     }
+     document.getElementById('mySpan03').innerHTML = myTemp
+
+}"><br>
+<span id="mySpan03">...</span><br><br>
+
+
+
+
+
+<li><input id="myText04a" type=text value=1><input id="myText04b" type=text value=1>
+<input type=button value="Alert if neither are 1" onclick="{
+     myV = document.getElementById('myText04a').value
+     myU = document.getElementById('myText04b').value
+     myTemp = '...'
+     if (myV != 1 || myU != 1){
+     alert('Alert!')
+     }  else {
+        myTemp = 'Variables are 1'
+     }
+     document.getElementById('mySpan04').innerHTML = myTemp
+
+}"><br>
+<span id="mySpan04">...</span><br><br>
+
+
+
+
+
+
+
+<li><input id="myText05" type=text value=-5>
+<br><br>
+<input type=button value="Square if x is positive" onclick="{
+    x = document.getElementById('myText05').value
+    document.getElementById('mySpan05').innerHTML = x*x
+    if (x < 0){
+    alert('Value is too low')
+    }
+}">
+<br><br>
+
+<span id="mySpan05">...</span><br><br>
+
+
+
+
+
+</center>
+</body>
+</html>
