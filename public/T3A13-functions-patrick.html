@@ -1,0 +1,112 @@
+<html>
+<head>
+</head>
+<body style="background-color:black;color:white;">
+<h1 align=center>T3A013 Functions by Patrick</h1>
+<h3>Version number 0.0.2</h3>
+
+<script>
+
+function myBasicFun() {
+   document.getElementById('mySpan01').innerHTML = "Apple"
+}
+
+function myAdvancedFun(x,y){
+	return x*y
+}
+
+function myAdvancedFun2(x,y){ 
+        return x/y
+}
+
+function myBasicFun2() {
+   document.getElementById('mySpan03').innerHTML = "Banana"
+}
+
+function myAdvancedFun3(x,y){ 
+        return x - -y
+}
+
+function myAdvancedFun4(x,y){ 
+        return x-y
+}
+</script>
+
+<ol>
+<input id="myText01" type=text value=3><br><br>
+<li><input type=button value="Run function" onclick="{
+    myBasicFun()
+}"><br><br>
+
+<li><input type=button value="Advanced" onclick="{
+   document.getElementById('mySpan01').innerHTML = myAdvancedFun(4,2)
+}"><br><br>
+<span id="mySpan01">...</span><br><br>
+
+
+
+<li><input type=button value="Function 2" onclick="{
+   document.getElementById('mySpan02').innerHTML = myAdvancedFun(-4,2)
+}"><br><br>
+<span id="mySpan02">...</span><br><br>
+
+
+
+<li><input type=button value="Function 3" onclick="{
+    document.getElementById('mySpan02').innerHTML = myAdvancedFun2(80,5)
+}"><br><br>
+
+
+
+<li><input type=button value="Function 4" onclick="{
+    myBasicFun2()
+}"><br><br>
+<span id="mySpan03">...</span><br><br>
+
+
+
+<li>Multiply x & y if x > y<br><br>
+<input type=text id="myTextA" value="4"><input type=text id="myTextB" value="2"><br><br>
+
+<input type=button value="Function 5" onclick="{
+   x = document.getElementById('myTextA').value
+   y = document.getElementById('myTextB').value
+   if (x > y){
+   document.getElementById('mySpan04').innerHTML = myAdvancedFun(x,y)
+}
+}"><br><br>
+<span id="mySpan04">...</span><br><br>
+
+
+
+
+<li>Add x on y if x > y otherwise subtract y on x.<br><br>
+<input type=text id="myTextC" value="4"><input type=text id="myTextD" value="2"><br><br>
+
+<input type=button value="Function 5" onclick="{
+   x = document.getElementById('myTextC').value
+   y = document.getElementById('myTextD').value
+   if (x > y){
+   document.getElementById('mySpan05').innerHTML = myAdvancedFun3(x,y)
+   } else {
+   document.getElementById('mySpan05').innerHTML = myAdvancedFun4(x,y)
+}
+}"><br><br>
+<span id="mySpan05">...</span>
+
+
+
+
+
+
+
+
+
+
+
+
+<p id="myP1" style="color:yellow;">Why? Because you can use double quotes and you can use a block of code multiple times <br>more efficiently.
+you can also return and pass variables.
+</p>
+</body>
+</html>
