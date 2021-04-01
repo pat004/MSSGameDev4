@@ -1,14 +1,17 @@
-Version 0.0.2
+Version 0.0.3
 
 <h1 align=center>T3A016 Objects by Patrick</h1>
 
-Enter an age into the object: <input id="myText01" type=text value=20
+Enter a name into the object: <input id="myText01" type=text value="John"
+><br><br>
+
+Enter an age into the object: <input id="myText02" type=text value=20
 ><br><br>
 
 <input type=button value="Make and Show Object" onclick="{
   let myObject = {
-	'firstName': 'John',
-	'age': document.getElementById('myText01').value
+	'firstName': document.getElementById('myText01').value,
+	'age': document.getElementById('myText02').value
        }
 
 document.getElementById('mySpan01').innerHTML ='myObject.firstName: '
@@ -16,6 +19,9 @@ document.getElementById('mySpan01').innerHTML ='myObject.firstName: '
 
 document.getElementById('mySpan02').innerHTML ='myObject.age: '
 + myObject.age
+
+document.getElementById('mySpan03').innerHTML ='myObject.birth: '
++ myObject.brith
 
 }"><br><br>
 
