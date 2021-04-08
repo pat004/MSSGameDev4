@@ -1,4 +1,4 @@
-Version 0.0.4
+Version 0.0.5
 
 <script>let mySound1 =new Audio('Audio files/zitem.mp3')</script>
 
@@ -6,7 +6,7 @@ Version 0.0.4
 <body style="background-color:black;color:white;">
 <center><b><font size="4">NOTE: Let audio finish before testing another event.</font></b></center>
 <br><br><Br><Br>
-
+<form>
 
 
 <ol>
@@ -33,18 +33,31 @@ Version 0.0.4
 }"> <center><b>Hover inside with mouse</b><br>(may take a few attempts to hear sound)</center></div><br><br>
 
 
-<li><input type=text value="type here" onKeyDown="{
+<li><input type=text value="On Key Down" onKeyDown="{
+    mySound1.play()
+}"><br><br>
+
+<li><input type=text value="On Key Up" onKeyUp="{
     mySound1.play()
 }"><br><br>
 
 
+<li><input type="text" value="Select/Highlight this text." onSelect="{
+    mySound1.play()
+}"><br><br>
 
+<li>Focus on text box: <input type="text" onFocus="{
+    mySound1.play()
+}"><br><br>
 
+</ol></li>
 
-
-<ul>Other events you could use on any web page tag:
+<ul>Events used in order:<br><br><ol>
 <li><font color="green">onClick</font>
-<li><font color="green">onKeyDown</font>
+<li><font color="green">onChange</font>
 <li><font color="green">onDblClick</font>
 <li><font color="green">onMouseOver</font>
-<li><font color="green">onChange</font>
+<li><font color="green">onKeyDown</font>
+<li><font color="green">onKeyUp</font>
+<li><font color="green">onSelect</font>
+<li><font color="green">onFocus</font>
