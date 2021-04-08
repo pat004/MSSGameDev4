@@ -1,29 +1,50 @@
-Version 0.0.2
+Version 0.0.4
 
-<script>let mySound1 =new Audio('Audio files/m64slider.mp3')</script>
+<script>let mySound1 =new Audio('Audio files/zitem.mp3')</script>
 
 <h1 align=center>T3A18 Sounds and Events by Patrick</h1>
+<body style="background-color:black;color:white;">
+<center><b><font size="4">NOTE: Let audio finish before testing another event.</font></b></center>
+<br><br><Br><Br>
 
-<b onClick="{
+
+
+<ol>
+<li><b onclick="{
     mySound1.play()
-}">    This is bold<br>and several<br> lines<br> Click it to hear a sound!</b><br>
+}">    This is bold<br>and several<br> lines<br> Click it to hear a sound!</b><br><br>
 
-<br>
 
-Change the following: <input type=text value=5 onChange="{
-   alert('Value changed to: '+this.value)
-}">
+
+<li>Change the following and press enter: <input type=text value=5 onChange="{
+   mySound1.play()
+}"><br><br>
+
+
+
+<li><i onDblClick="{
+    mySound1.play()
+}"> Double Click Text</i><br><br>
+
+
+
+<li><div style="border:solid;height:200px;width:200px;" onMouseOver="{
+    mySound1.play()
+}"> <center><b>Hover inside with mouse</b><br>(may take a few attempts to hear sound)</center></div><br><br>
+
+
+<li><input type=text value="type here" onKeyDown="{
+    mySound1.play()
+}"><br><br>
+
+
+
+
+
 
 <ul>Other events you could use on any web page tag:
 <li><font color="green">onClick</font>
-<li>onMouseScroll
-<li>onDblClick
-<li>onMouseOver
+<li><font color="green">onKeyDown</font>
+<li><font color="green">onDblClick</font>
+<li><font color="green">onMouseOver</font>
 <li><font color="green">onChange</font>
-<li>
-<li>
-<li>
-<li>
-<li>
-<li>
-<li>
