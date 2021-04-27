@@ -24,7 +24,7 @@ function myCheckAll(){
   if(myHitOther('mySpan01', 'mySpan02')){
     document.getElementById('mySpan02').style.left = '-400px'
     alert('You Win!')
-    location = 'https://google.ca'
+    location = 'index.html'
   }
 
   if(myHitOther('mySpan01', 'mySpan03')){
@@ -38,7 +38,7 @@ function myCheckAll(){
 
 </script>
 </head>
-
+<body style="background-color:black;color:white;">
 
 <body  onKeyDown="{
      let myAlphaKey = event.key
@@ -46,26 +46,45 @@ function myCheckAll(){
 
 
       if (myAlphaKey.toLowerCase() == 'arrowright') {
-         document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) + 10
+         document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) + 20
          myCheckAll()
      }
 
       if (myAlphaKey.toLowerCase() == 'd') {   // go right
-         document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) + 10
+         document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) + 20
+         myCheckAll()
+      }
+
+
+      if (myAlphaKey.toLowerCase() == 'arrowleft') {
+         document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) - 20
+         myCheckAll()
+     }
+
+      if (myAlphaKey.toLowerCase() == 'a') {   // go left
+         document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) - 20
          myCheckAll()
       }
 }">
 
 
-<h1 align=center>T4A04-WASD-Fred.html</h1>
+<h1 align=center><font color="yellow">T4A04 WASD by Patrick</font></h1>
 
 
 <input type=button value="Move 10 pixels right" onClick="{
                         
-  document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) + 10
+  document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) + 20
   myCheckAll()
                         
 }">
+
+<input type=button value="Move 10 pixels left" onClick="{
+                        
+  document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) - 20
+  myCheckAll()
+                        
+}">
+
 
 
 <input type=button value="Move 10 pixels Diagonal" onClick="{
@@ -82,12 +101,12 @@ function myCheckAll(){
 <div id="myDiv01">...</div>
 
 
-<span id="mySpan01" style="position:absolute; left:100; top:150; width:45; height:30">
-   Span 1 </span><br>
-<span id="mySpan02" style="position:absolute; left:400; top:150; width:45; height:30"> 
+<span id="mySpan01" style="position:absolute; left:100; top:150; width:200; height:200" title="ship1">
+   <img src="game gifs/Galaga Ship.gif"> </span><br>
+<span id="mySpan02" style="position:absolute; left:700; top:150; width:100; height:100" title="goal2"> 
    Span 2 </span><br>
-<span id="mySpan03" style="position:absolute; left:200; top:150; width:45; height:30"> 
-   Span 3 </span><br>
+<span id="mySpan03" style="position:absolute; left:350; top:150; width:100; height:100" title="pizza3"> 
+   <img src="game gifs/pizza.gif" height=75 width=75> </span><br>
 
 
 
