@@ -4,6 +4,8 @@
 
 // Global variables works anywhere in your code
 
+let mySound1 = new Audio('Audio files/zitem.mp3')
+
 document.myXmove = 5   // amount it moves in pixels
 document.myYmove = 4
 
@@ -94,7 +96,7 @@ Version 0.0.2
 <input type=button value="Move 10 right Auto" onClick="{
     clearInterval(document.myXtimer)                    
     document.myXtimer = setInterval( myXAuto , document.myXspeed);
-                        
+    mySound1.play()                    
 }">
 
 <input type=button value="Math.random() testing" onClick="{
