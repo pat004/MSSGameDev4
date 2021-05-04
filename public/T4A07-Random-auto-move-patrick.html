@@ -1,3 +1,5 @@
+<html>
+<head>
 <script>
 
 // Global variables works anywhere in your code
@@ -54,8 +56,8 @@ if (parseInt(document.getElementById('mySpan01').style.left) + 65 > window.inner
 
   if(myHitOther('mySpan01', 'mySpan03')){
     document.getElementById('mySpan03').style.left = '-400px'
-   // alert('You Win!')
-   // location = 'https://google.ca'
+    alert('You Win!')
+    location = 'index.html'
   }
 
   // your other checks go here
@@ -79,7 +81,9 @@ function myXAuto(){
 
 
 </script>
-
+</head>
+<body>
+<body style="background-color:black;color:white;">
 
 
 
@@ -106,3 +110,6 @@ function myXAuto(){
    Span 2 </span><br>
 <span title="3"  id="mySpan03" style="position:absolute; left:700; top:150; width:45; height:30"> 
    Span 3 </span><br>
+
+</body>
+</html>
