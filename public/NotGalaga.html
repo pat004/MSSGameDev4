@@ -2,6 +2,9 @@
 <head>
 
 <script>
+
+let mySound1 =new Audio('Audio files/gstart.mp3')
+
 function myHitOther(my1,my2){
    left1   = parseInt(document.getElementById(my1).style.left)
    right1  = left1 + parseInt(document.getElementById(my1).style.width)
@@ -38,59 +41,59 @@ function myCheckAll(){
 
 </script>
 </head>
-
+<body> 
 <body  onKeyDown="{
      let myAlphaKey = event.key
      document.getElementById('myDiv01').innerHTML = 'You typed: ' + myAlphaKey.toLowerCase()
 
 
       if (myAlphaKey.toLowerCase() == 'arrowright') {
-         document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) + 20
+         document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) + 32
          myCheckAll()
      }
 
       if (myAlphaKey.toLowerCase() == 'd') {   // go right
-         document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) + 20
+         document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) + 32
          myCheckAll()
       }
 
 
       if (myAlphaKey.toLowerCase() == 'arrowleft') {
-         document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) - 50
+         document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) - 32
          myCheckAll()
      }
 
       if (myAlphaKey.toLowerCase() == 'a') {   // go left
-         document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) - 50
+         document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) - 32
          myCheckAll()
       }
 
       if (myAlphaKey.toLowerCase() == 'w') {   // go up
-         document.getElementById('mySpan01').style.top = parseInt(document.getElementById('mySpan01').style.top) - 50
+         document.getElementById('mySpan01').style.top = parseInt(document.getElementById('mySpan01').style.top) - 32
          myCheckAll()
       }
 
       if (myAlphaKey.toLowerCase() == 's') {   // go down
-         document.getElementById('mySpan01').style.top = parseInt(document.getElementById('mySpan01').style.top) + 50
+         document.getElementById('mySpan01').style.top = parseInt(document.getElementById('mySpan01').style.top) + 32
          myCheckAll()
       }
 }">
 
 
-<h1 style="border:solid;text-align:center;font-size:48px;font-family:papyrus;text-shadow: 2px 2px yellow;box-shadow: 2px 2px yellow;"> 'NotGalaga' by Patrick</h1> 
+<h1 style="border:solid;text-align:center;font-size:48px;font-family:papyrus;text-shadow: 2px 2px yellow;box-shadow: 2px 2px yellow;">'NotGalaga' IV</h1> 
 <body style="border:double;border-color:white;background-color:black; background-image: url('https://media.giphy.com/media/41SIOpeqCfIru/giphy.gif');background-repeat: no-repeat;background-attachment: fixed; background-size: cover;">
-
+ 
 
 <input type=button value="Right" onClick="{
                         
-  document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) + 50
+  document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) + 32
   myCheckAll()
                         
 }">
 
 <input type=button value="Left" onClick="{
                         
-  document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) - 50
+  document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) - 32
   myCheckAll()
                         
 }">
@@ -98,13 +101,13 @@ function myCheckAll(){
 
 
 <input type=button value="Up" onClick="{
-  document.getElementById('mySpan01').style.top  = parseInt(document.getElementById('mySpan01').style.top)  - 50
+  document.getElementById('mySpan01').style.top  = parseInt(document.getElementById('mySpan01').style.top)  - 32
   myCheckAll()
                         
 }">
 
 <input type=button value="Down" onClick="{
-  document.getElementById('mySpan01').style.top  = parseInt(document.getElementById('mySpan01').style.top)  + 50
+  document.getElementById('mySpan01').style.top  = parseInt(document.getElementById('mySpan01').style.top)  + 32
   myCheckAll()
                         
 }">
@@ -113,7 +116,7 @@ function myCheckAll(){
 
 <div id="myDiv02">
 <span id="mySpan01" style="position:absolute; left:100; top:200; width:200; height:100;" title="1p">
-   <img src="game gifs/ship.png"> </span><br>
+   <img src="game gifs/ship.png"></span><br>
 <span id="mySpan02" style="position:absolute; left:700; top:150; width:100;color:red; height:100;" title="goal2"> 
    Span 2 </span><br>
 
