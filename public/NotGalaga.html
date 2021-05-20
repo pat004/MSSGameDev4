@@ -1,0 +1,110 @@
+<html>
+<head>
+
+<script>
+function myHitOther(my1,my2){
+   left1   = parseInt(document.getElementById(my1).style.left)
+   right1  = left1 + parseInt(document.getElementById(my1).style.width)
+   top1    = parseInt(document.getElementById(my1).style.top)   
+   bottom1 = top1   + parseInt(document.getElementById(my1).style.height)
+   left2   = parseInt(document.getElementById(my2).style.left)
+   right2  = left2 + parseInt(document.getElementById(my2).style.width)
+   top2    = parseInt(document.getElementById(my2).style.top)   
+   bottom2 = top2   + parseInt(document.getElementById(my2).style.height)
+   if ((right1  >=  left2  ) &&      	   
+       (bottom1 >=  top2   ) &&
+       (left1   <=  right2 ) &&
+       (top1    <=  bottom2) ){
+       return true
+   }
+}
+
+
+function myCheckAll(){
+  if(myHitOther('mySpan01', 'mySpan02')){
+    document.getElementById('mySpan02').style.left = '-400px'
+    alert('You Win!')
+    location = 'index.html'
+  }
+
+  if(myHitOther('mySpan01', 'mySpan03')){
+    document.getElementById('mySpan03').style.left = '-400px'
+  }
+
+  // your other checks go here
+
+}
+
+
+</script>
+</head>
+
+<body  onKeyDown="{
+     let myAlphaKey = event.key
+     document.getElementById('myDiv01').innerHTML = 'You typed: ' + myAlphaKey.toLowerCase()
+
+
+      if (myAlphaKey.toLowerCase() == 'arrowright') {
+         document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) + 20
+         myCheckAll()
+     }
+
+      if (myAlphaKey.toLowerCase() == 'd') {   // go right
+         document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) + 20
+         myCheckAll()
+      }
+
+
+      if (myAlphaKey.toLowerCase() == 'arrowleft') {
+         document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) - 20
+         myCheckAll()
+     }
+
+      if (myAlphaKey.toLowerCase() == 'a') {   // go left
+         document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) - 20
+         myCheckAll()
+      }
+}">
+
+
+<h1 style="border:solid;text-align:center;font-size:48px;font-family:papyrus;text-shadow: 2px 2px yellow;box-shadow: 2px 2px yellow;"> 'NotGalaga' by Patrick</h1> 
+<body style="border:double;border-color:white;background-color:black; background-image: url('https://media.giphy.com/media/41SIOpeqCfIru/giphy.gif');background-repeat: no-repeat;background-attachment: fixed; background-size: cover;">
+
+
+<input type=button value="Move 10 pixels right" onClick="{
+                        
+  document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) + 20
+  myCheckAll()
+                        
+}">
+
+<input type=button value="Move 10 pixels left" onClick="{
+                        
+  document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) - 20
+  myCheckAll()
+                        
+}">
+
+
+
+<input type=button value="Move 10 pixels Diagonal" onClick="{
+                        
+  document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) + 10
+  document.getElementById('mySpan01').style.top  = parseInt(document.getElementById('mySpan01').style.top)  - 10
+  myCheckAll()
+                        
+}">
+
+
+<div id="myDiv01">...</div>
+
+<div id="myDiv02">
+<span id="mySpan01" style="position:absolute; left:100; top:200; width:200; height:200;" title="1p">
+   <img src="game gifs/ship.png"> </span><br>
+<span id="mySpan02" style="position:absolute; left:700; top:150; width:100; height:100;color:red;" title="goal2"> 
+   Span 2 </span><br>
+
+</div>
+
+</body>
+</html>
