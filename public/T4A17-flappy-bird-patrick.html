@@ -51,33 +51,39 @@ function myCheckAll(){
 if (parseInt(document.getElementById('mySpan01').style.top) -5  > window.innerHeight) { 
     document.getElementById('mySpan01').style.top = '100px' 
     alert('You Lose!')
-    location = 'T4A17-flappy-patrick-name.html'
+    location = 'index.html'
 }
 
 
   if(myHitOther('mySpan01', 'mySpan02')){
     document.getElementById('mySpan02').style.left = '-400px'
     alert('You Lose!')
-    location = 'T4A17-flappy-patrick.html'
+    location = 'index.html'
   }
 
   if(myHitOther('mySpan01', 'mySpan03')){
     document.getElementById('mySpan03').style.left = '-400px'
     alert('You Lose!')
-    location = 'T4A17-flappy-bird-patrick.html'
+    location = 'index.html'
   }
 
   if(myHitOther('mySpan01', 'mySpan04')){
     document.getElementById('mySpan04').style.left = '-400px'
     alert('You Lose!')
-    location = 'T4A17-flappy-bird-patrick.html'
+    location = 'index.html'
   }
 
 
 
-  if(myHitOther('mySpan01', 'mySpan200')){
+  if(myHitOther('mySpan01', 'mySpan05')){
     document.getElementById('mySpan03').style.left = '-400px'
     alert('You Win!')
+    location = 'index.html'
+  }
+
+  if(myHitOther('mySpan01', 'mySpan06')){
+    document.getElementById('mySpan03').style.left = '-400px'
+    alert('You Lose!')
     location = 'index.html'
   }
 
@@ -94,7 +100,11 @@ function myXAuto(){
  
   document.getElementById('mySpan03').style.left = parseInt(document.getElementById('mySpan03').style.left) + document.myXmove 
 
-   document.getElementById('mySpan04').style.left = parseInt(document.getElementById('mySpan04').style.left) + document.myXmove 
+  document.getElementById('mySpan04').style.left = parseInt(document.getElementById('mySpan04').style.left) + document.myXmove 
+ 
+  document.getElementById('mySpan05').style.left = parseInt(document.getElementById('mySpan04').style.left) + document.myXmove 
+ 
+  document.getElementById('mySpan06').style.left = parseInt(document.getElementById('mySpan04').style.left) + document.myXmove 
  
 
   myCheckAll()
@@ -125,13 +135,21 @@ document.myXtimer = setInterval( myXAuto , document.myXspeed);
 
 <span title="1" id="mySpan01" style="position:absolute; left:100; top:150; width:45; height:30">
    Span 1 </span><br>
+
 <span title="2"  id="mySpan02" style="position:absolute; left:900; top:100; width:45; height:30"> 
    Span 2 </span><br>
+
 <span title="3"  id="mySpan03" style="position:absolute; left:900; top:300; width:45; height:30"> 
    Span 3 </span><br>
 
 <span title="4"  id="mySpan04" style="position:absolute; left:1100; top:150; width:45; height:30"> 
-   Span 3 </span><br>
+   Span 4 </span><br>
+
+<span title="5" id="mySpan05" style="position:absolute; left:1100; top:450; width:45; height:30"> 
+   Span 5 </span><br>
+
+<span title="6" id="mySpan06" style="position:absolute; left:900; top:600; width:45; height:30"> 
+   Span 6 </span><br>
 
 
 
