@@ -24,17 +24,20 @@ function myHitOther(my1,my2){
 
 
 function myCheckAll(){
+
   if(myHitOther('mySpan01', 'mySpan02')){
-    document.getElementById('mySpan02').style.left = '-400px'
+    ranX1 = Math.floor(Math.random()*window.innerWidth*0.3);
+    document.getElementById('myTextScore').value = parseInt(document.getElementById('myTextScore').value) + 1;
+   
+    document.getElementById('mySpan02').style.left = ranX1
+  }
+
+if(parseInt(document.getElementById('myTextScore').value)  >=20  ){
+    mySound1.play()
     alert('You Win!')
-    location = 'index.html'
+    location = 'final-project-index-patrick.html'
   }
 
-  if(myHitOther('mySpan01', 'mySpan03')){
-    document.getElementById('mySpan03').style.left = '-400px'
-  }
-
-  // your other checks go here
 
 }
 
@@ -45,34 +48,26 @@ function myCheckAll(){
 <body  onKeyDown="{
      let myAlphaKey = event.key
      document.getElementById('myDiv01').innerHTML = 'You typed: ' + myAlphaKey.toLowerCase()
-
-
       if (myAlphaKey.toLowerCase() == 'arrowright') {
          document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) + 32
          myCheckAll()
      }
-
       if (myAlphaKey.toLowerCase() == 'd') {   // go right
          document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) + 32
          myCheckAll()
       }
-
-
       if (myAlphaKey.toLowerCase() == 'arrowleft') {
          document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) - 32
          myCheckAll()
      }
-
       if (myAlphaKey.toLowerCase() == 'a') {   // go left
          document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) - 32
          myCheckAll()
       }
-
       if (myAlphaKey.toLowerCase() == 'w') {   // go up
          document.getElementById('mySpan01').style.top = parseInt(document.getElementById('mySpan01').style.top) - 32
          myCheckAll()
       }
-
       if (myAlphaKey.toLowerCase() == 's') {   // go down
          document.getElementById('mySpan01').style.top = parseInt(document.getElementById('mySpan01').style.top) + 32
          myCheckAll()
@@ -80,9 +75,15 @@ function myCheckAll(){
 }">
 
 
-<h1 style="border:solid;text-align:center;font-size:48px;font-family:papyrus;text-shadow: 2px 2px yellow;box-shadow: 2px 2px yellow;">'NotGalaga' IV</h1> 
-<body style="border:double;border-color:white;background-color:black; background-image: url('https://media.giphy.com/media/41SIOpeqCfIru/giphy.gif');background-repeat: no-repeat;background-attachment: fixed; background-size: cover;">
-<body onclick="{mySound1.play()}"> 
+<h1 style="border:solid;text-align:center;color:black;font-size:48px;font-family:papyrus;text-shadow: 2px 2px yellow;box-shadow: 2px 2px yellow;">'NotGalaga' IV</h1> 
+<body style="border:double;border-color:white;background-color:black;color:white; background-image: url('https://media.giphy.com/media/41SIOpeqCfIru/giphy.gif');background-repeat: no-repeat;background-attachment: fixed; background-size: cover;"> 
+
+Score: <input id="myTextScore" type=text value=0 ><br>
+
+Life: <input id="myTextLife" type=number value=20 ><br><br>
+
+
+
 
 <input type=button value="Right" onClick="{
                         
@@ -115,10 +116,10 @@ function myCheckAll(){
 <div id="myDiv01">...</div>
 
 <div id="myDiv02">
-<span id="mySpan01" style="position:absolute; left:100; top:200; width:200; height:100;" title="1p">
-   <img src="game gifs/ship.png"></span><br>
-<span id="mySpan02" style="position:absolute; left:700; top:150; width:100;color:red; height:100;" title="goal2"> 
-   Span 2 </span><br>
+<span id="mySpan01" style="position:absolute; left:100; top:200; width:100; height:100;" title="1">
+   <img src="game gifs/ship.png" height=512 width=512></span><br>
+<span id="mySpan02" style="position:absolute; left:700; top:150; width:45;color:red; height:100;" title="2"> 
+   <img src="game gifs/pizza.gif" height=64 width=64> </span><br>
 
 </div>
 
