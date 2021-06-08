@@ -52,17 +52,11 @@ for (let x=1;  x <= document.myBulletMax; x++){
        document.getElementById('myBullet'+x).style.visibility= 'hidden'
     }
      
-   if(myHitOther('myBullet'+x, 'mySpan02')){
-    ranX1 = Math.floor(Math.random()*window.innerWidth*0.95);
-    document.getElementById('myTextScore').value = parseInt(document.getElementById('myTextScore').value) + 1;
-   
-    document.getElementById('mySpan02').style.left = ranX1
+   if(myHitOther('myBullet'+x, 'mySpan2')){
+      ranX1 = Math.floor(Math.random()*window.innerWidth*0.95);
+      document.getElementById('myTextScore').value = parseInt(document.getElementById('myTextScore').value) + 1;
+      document.getElementById('mySpan2').style.left = ranX1
   }
-
-
-    if (myHitOther('myBullet'+x, 'mySpan02')){
-       document.getElementById('mySpan02').style.left = '0px'
-   }
 
 } // check all bullets finished
 
@@ -147,7 +141,7 @@ function myBulletFire(){
    <br><br>HTML</span><br>
 
 
-<span title="2"  id="mySpan02" style="position:absolute; left:800; top:150; width:45; height:30;"> 
+<span title="2"  id="mySpan2" style="position:absolute; left:800; top:150; width:45; height:30;"> 
    <font color=red>Span 2</span><br>
 
 <span title="3"  id="mySpan03" style="position:absolute; left:1000; top:150; width:45; height:30;"> 
