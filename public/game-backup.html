@@ -9,6 +9,9 @@ let mySound1 =new Audio('Audio files/gstart.mp3')
 document.myNumBullets = 1;
 document.myBulletMax  = 10;
 
+document.mySpanMax = 3;
+   
+
 
 document.myBulletMove = 6   // amount it moves in pixels
 
@@ -51,12 +54,14 @@ for (let x=1;  x <= document.myBulletMax; x++){
        document.getElementById('myBullet'+x).style.left = document.getElementById('player').style.left
        document.getElementById('myBullet'+x).style.visibility= 'hidden'
     }
-     
+   
+for (let x=1;  x <= document.mySpanMax; x++){   
    if(myHitOther('myBullet'+x, 'mySpan2')){
       ranX1 = Math.floor(Math.random()*window.innerWidth*0.95);
       document.getElementById('myTextScore').value = parseInt(document.getElementById('myTextScore').value) + 1;
       document.getElementById('mySpan2').style.left = ranX1
   }
+}
 
 } // check all bullets finished
 
