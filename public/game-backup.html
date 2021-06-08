@@ -56,10 +56,10 @@ for (let x=1;  x <= document.myBulletMax; x++){
     }
    
 for (let y=1;  y <= document.mySpanMax; y++){   
-   if(myHitOther('myBullet'+x, 'mySpan2')){
+   if(myHitOther('myBullet'+x, 'mySpan'+y)){
       ranX1 = Math.floor(Math.random()*window.innerWidth*0.95);
       document.getElementById('myTextScore').value = parseInt(document.getElementById('myTextScore').value) + 1;
-      document.getElementById('mySpan2').style.left = ranX1
+      document.getElementById('mySpan'+y).style.left = ranX1
   }
 }
 
