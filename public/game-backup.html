@@ -55,7 +55,7 @@ for (let x=1;  x <= document.myBulletMax; x++){
        document.getElementById('myBullet'+x).style.visibility= 'hidden'
     }
    
-for (let y=1;  y <= document.mySpanMax; y++){   
+for (let y=2;  y <= document.mySpanMax; y++){   
    if(myHitOther('myBullet'+x, 'mySpan'+y)){
       ranX1 = Math.floor(Math.random()*window.innerWidth*0.95);
       document.getElementById('myTextScore').value = parseInt(document.getElementById('myTextScore').value) + 1;
