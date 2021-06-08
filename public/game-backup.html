@@ -74,13 +74,15 @@ for (let x=1;  x <= document.myBulletMax; x++){
 
    }
 
-}   // check all bullets finished
-
-  if(myHitOther('myBullet'+x, 'mySpan02')){
+if(myHitOther('myBullet'+x, 'mySpan02')){
     document.getElementById('mySpan02').style.left = '0px'
   }
 
 }
+
+}   // check all bullets finished
+
+  
 
 
 function myBulletFire(){
