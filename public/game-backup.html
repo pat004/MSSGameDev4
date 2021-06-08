@@ -59,10 +59,6 @@ for (let x=1;  x <= document.myBulletMax; x++){
     document.getElementById('mySpan02').style.left = ranX1
   }
 
-   if(parseInt(document.getElementById('myTextScore').value)  >=20  ){
-    location = 'final-project-index-patrick.html'
-  } 
-
 
     if (myHitOther('myBullet'+x, 'mySpan02')){
     // comment out if bullet vertical
@@ -79,6 +75,10 @@ if(myHitOther('myBullet'+x, 'mySpan02')){
   }
 
 }
+
+if(parseInt(document.getElementById('myTextScore').value)  >=20  ){
+    location = 'final-project-index-patrick.html'
+  } 
 
 }   // check all bullets finished
 
