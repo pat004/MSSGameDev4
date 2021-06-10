@@ -78,6 +78,12 @@ if(parseInt(document.getElementById('myTextScore').value)  >=20  ){
     location = 'final-project-index-patrick.html'
   } 
 
+if(parseInt(document.getElementById('myTextLife').value)  <=0  ){
+    document.getElementById('myTextLife').value = 20
+    alert('You Lose! Restart?')
+    location = 'level-2-game-patrick.html'
+  } 
+
 }  
 
   
