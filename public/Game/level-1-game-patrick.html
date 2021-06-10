@@ -6,6 +6,8 @@
 
 let mySound1 =new Audio('Audio files/gstart.mp3')
 
+let mySound2 =new Audio('Audio files/clear1.mp3')
+
 document.myNumBullets = 1;
 document.myBulletMax  = 10;
 
@@ -67,6 +69,7 @@ for (let y=2;  y <= document.mySpanMax; y++){
 
 if(parseInt(document.getElementById('myTextScore').value)  >=20  ){
     document.getElementById('myTextScore').value = 0
+    mySound2.play()
     alert('You Win! Next Stage')
     location = 'level-2-game-patrick.html'
   } 
