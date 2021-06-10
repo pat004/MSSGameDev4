@@ -70,8 +70,6 @@ for (let y=2;  y <= document.mySpanMax; y++){
 
 if(parseInt(document.getElementById('myTextScore').value)  >=20  ){
     document.getElementById('myTextScore').value = 0
-    mySound1.load()
-    mySound1.play()
     alert('You Win! Next Stage...')
     location = 'level-2-game-patrick.html'
   } 
@@ -98,8 +96,15 @@ function myBulletFire(){
 </head>
 <body>
 <body onload="{
+mySound2.load()
 mySound1.play()
 }">
+<script>
+if(document.getElementById('myTextLife').value >=20 ) {
+   mySound2.play()
+ }
+</script>
+
 <body style="background-color:black;color:white;">
 <body  onKeyDown="{
      let myAlphaKey = event.key
