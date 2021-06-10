@@ -111,14 +111,12 @@ for (let y=2;  y <= document.mySpanMax; y++){
 
 if(parseInt(document.getElementById('myTextScore').value)  >=20  ){
     document.getElementById('myTextScore').value = 0
-    mySound1.stop()
     alert('You Win! Next Stage...')
     location = 'final-project-index-patrick.html'
   } 
 
 if(parseInt(document.getElementById('myTextLife').value)  <=0  ){
     document.getElementById('myTextLife').value = 20
-    mySound1.stop()
     alert('You Lose! Restart?')
     location = 'final-project-index-patrick.html'
   } 
