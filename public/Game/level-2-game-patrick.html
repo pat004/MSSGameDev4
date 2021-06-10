@@ -55,6 +55,10 @@ for (let x=1;  x <= document.myBulletMax; x++){
        document.getElementById('myBullet'+x).style.visibility= 'hidden'
     }
    
+   if(myHitOther('myBullet'+x,'mySpan7')){
+   document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) - 0.0001
+  }
+   
 for (let y=2;  y <= document.mySpanMax; y++){   
    if(myHitOther('myBullet'+x, 'mySpan'+y)){
       ranX1 = Math.floor(Math.random()*window.innerWidth*0.67);
@@ -64,6 +68,7 @@ for (let y=2;  y <= document.mySpanMax; y++){
 }
 
 } // check all bullets finished
+
 
 if(parseInt(document.getElementById('myTextScore').value)  >=20  ){
     document.getElementById('myTextScore').value = 0
@@ -121,14 +126,7 @@ mySound1.play()
          document.getElementById('player').style.left = parseInt(document.getElementById('player').style.left) - 32
          myCheckAll()
       }
-      if (myAlphaKey.toLowerCase() == 'w') {   // go up
-         document.getElementById('player').style.top = parseInt(document.getElementById('player').style.top) - 32
-         myCheckAll()
-      }
-      if (myAlphaKey.toLowerCase() == 's') {   // go down
-         document.getElementById('player').style.top = parseInt(document.getElementById('player').style.top) + 32
-         myCheckAll()
-      }
+      
 }">
 
 <h1 style="border:solid;text-align:center;color:black;font-size:48px;font-family:papyrus;text-shadow: 2px 2px yellow;box-shadow: 2px 2px yellow;">HTML Blaster V</h1>
@@ -157,19 +155,23 @@ mySound1.play()
    <br><br>HTML</span><br>
 
 <span title="2"  id="mySpan2" style="position:absolute; left:300; top:150; width:45; height:30;"> 
-   <font color=red>Span 2</span><br>
+   <font color=red>Span 2</font><br><img src="game gifs/pizza.gif" height=32 width=32></span><br>
 
 <span title="3"  id="mySpan3" style="position:absolute; left:500; top:200; width:45; height:30;"> 
-   <font color=pink>Span 3</span><br>
+   <font color=pink>Span 3</font><br><img src="game gifs/pizza.gif" height=32 width=32></span><br>
 
 <span title="4"  id="mySpan4" style="position:absolute; left:700; top:250; width:45; height:30;"> 
-   <font color=yellow>Span 4</span><br>
+   <font color=yellow>Span 4</font><br><img src="game gifs/pizza.gif" height=32 width=32></span><br>
 
 <span title="5"  id="mySpan5" style="position:absolute; left:900; top:200; width:45; height:30;"> 
-   <font color=skyblue>Span 5</span><br>
+   <font color=skyblue>Span 5</font><br><img src="game gifs/pizza.gif" height=32 width=32></span><br>
 
 <span title="6"  id="mySpan6" style="position:absolute; left:1100; top:150; width:45; height:30;"> 
-   <font color=lime>Span 6</font></span><br>
+   <font color=lime>Span 6</font><br><img src="game gifs/pizza.gif" height=32 width=32></span><br>
+
+<span title="7"  id="mySpan7" style="position:absolute; left:700; top:400; width:45; height:0.1;"> 
+      Span 7<br>
+<img src="game gifs/pikachu.gif" height=64 width=64></span><br>
 
 
 
