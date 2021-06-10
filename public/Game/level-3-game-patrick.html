@@ -6,6 +6,8 @@
 
 let mySound1 =new Audio('Audio files/m64slider.mp3')
 
+let mySound2 =new Audio('Audio files/hitem.mp3')
+
 document.myNumBullets = 1;
 document.myBulletMax  = 10;
 
@@ -80,17 +82,20 @@ for (let x=1;  x <= document.myBulletMax; x++){
 
    if(myHitOther('myBullet'+x,'mySpan12')){
    document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) + 5;
-   document.getElementById('mySpan12').style.left = - 400
+   document.getElementById('mySpan12').style.left = - 400;
+   mySound2.play()
   }
 
    if(myHitOther('myBullet'+x,'mySpan13')){
    document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) + 5;
-   document.getElementById('mySpan13').style.left = - 400
+   document.getElementById('mySpan13').style.left = - 400;
+   mySound2.play()
   }
 
    if(myHitOther('myBullet'+x,'mySpan14')){
    document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) + 5;
-   document.getElementById('mySpan14').style.left = - 400
+   document.getElementById('mySpan14').style.left = - 400;
+   mySound2.play()
   }
    
 for (let y=2;  y <= document.mySpanMax; y++){   
