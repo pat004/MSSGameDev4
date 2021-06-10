@@ -9,9 +9,8 @@ let mySound1 =new Audio('Audio files/gstart.mp3')
 document.myNumBullets = 1;
 document.myBulletMax  = 10;
 
-
 document.mySpanMax = 6;
-document.myHitMax = 1;   
+   
 
 
 document.myBulletMove = 6   // amount it moves in pixels
@@ -62,12 +61,6 @@ for (let y=2;  y <= document.mySpanMax; y++){
       document.getElementById('myTextScore').value = parseInt(document.getElementById('myTextScore').value) + 1;
       document.getElementById('mySpan'+y).style.left = ranX1 + 256
   }
-
-for (let z=1; z <= document.myHitMax; z++){
-    if(myHitOther('myBullet'+x, 'myHit'+z)){
-    document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) - 5
-  }
-
 }
 
 } // check all bullets finished
@@ -75,12 +68,6 @@ for (let z=1; z <= document.myHitMax; z++){
 if(parseInt(document.getElementById('myTextScore').value)  >=20  ){
     document.getElementById('myTextScore').value = 0
     alert('You Win! Next Stage')
-    location = 'final-project-index-patrick.html'
-  } 
-
-if(parseInt(document.getElementById('myTextLife').value)  <=0  ){
-    document.getElementById('myTextLife').value = 20
-    alert('You Lose! Restart?')
     location = 'level-2-game-patrick.html'
   } 
 
@@ -164,22 +151,21 @@ mySound1.play()
    <br><br>HTML</span><br>
 
 <span title="2"  id="mySpan2" style="position:absolute; left:300; top:150; width:45; height:30;"> 
-   <font color=red>Span 2</font></span><br>
+   <font color=red>Span 2</span><br>
 
 <span title="3"  id="mySpan3" style="position:absolute; left:500; top:150; width:45; height:30;"> 
-   <font color=pink>Span 3</font></span><br>
+   <font color=pink>Span 3</span><br>
 
 <span title="4"  id="mySpan4" style="position:absolute; left:700; top:150; width:45; height:30;"> 
-   <font color=yellow>Span 4</font></span><br>
+   <font color=yellow>Span 4</span><br>
 
 <span title="5"  id="mySpan5" style="position:absolute; left:900; top:150; width:45; height:30;"> 
-   <font color=skyblue>Span 5</font></span><br>
+   <font color=skyblue>Span 5</span><br>
 
 <span title="6"  id="mySpan6" style="position:absolute; left:1100; top:150; width:45; height:30;"> 
    <font color=lime>Span 6</font></span><br>
 
-<span title="7" id="myHit1" style="position:absolute; left:700; top:400; width:45; height:30;">
-        Span 7</span>
+
 
 <span title="b1" id="myBullet1" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
 <font color=red><font size=5><b>^</font></span><br>
