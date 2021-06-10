@@ -26,7 +26,10 @@ document.myBulleTimer = 0;
 document.myXmove = 5   // amount it moves in pixels
 document.myYmove = 4
 
-
+function enableLoop() {
+   mySound1.loop = true;
+   mySound1.load();
+}
 
 function myHitOther(my1,my2){
    left1   = parseInt(document.getElementById(my1).style.left)
@@ -135,8 +138,10 @@ function myBulletFire(){
 </head>
 <body>
 <body onload="{
-mySound1.play()
-}">
+   enableLoop();
+   mySound1.play()
+  }">
+
 <body style="background-color:black;color:white;">
 <body  onKeyDown="{
      let myAlphaKey = event.key
