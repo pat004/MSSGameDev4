@@ -71,7 +71,8 @@ if(parseInt(document.getElementById('myTextScore').value)  >=20  ){
     document.getElementById('myTextScore').value = 0;
     mysound2.load();
     mySound2.play();
-    alert('You Win! Next Stage...');
+    document.getElementById('myTextScore').value = 0
+    alert('You Win! Next Stage...')
     location = 'level-2-game-patrick.html'
   } 
 
