@@ -3,14 +3,17 @@
 <script>
 let mySound1 = new Audio('Audio files/mm3opening.mp3')
 
-function openingLoop() {
+function enableLoop() {
    mySound1.loop = true;
    mySound1.load();
 }
 
 </script>
 </head>
-<body>
+<body onLoad="{
+   mySound1.play()
+}">
+
 <body onKeyDown="{
   location = 'level-1-game-patrick.html'
  }">
