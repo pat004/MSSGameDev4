@@ -67,6 +67,10 @@ for (let y=2;  y <= document.mySpanMax; y++){
 
 } // check all bullets finished
 
+if(parseInt(document.getElementById('myTextScore').value)  <=-1  ){
+   mySound2.load();    
+   mySound2.play()
+  }
 
 if(parseInt(document.getElementById('myTextScore').value)  >=20  ){
     document.getElementById('myTextScore').value = -999;
@@ -74,9 +78,6 @@ if(parseInt(document.getElementById('myTextScore').value)  >=20  ){
     location = 'level-2-game-patrick.html'
   } 
 
-if(parseInt(document.getElementById('myTextScore').value)  <=-1  ){    
-   mySound2.play()
-   }
 
 }  
 
