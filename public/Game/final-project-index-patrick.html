@@ -6,6 +6,7 @@ let mySound1 = new Audio('Audio files/mm3opening.mp3')
 function enableLoop() {
    mySound1.loop = true;
    mySound1.load();
+   mysound1.play();
 }
 
 
@@ -19,8 +20,7 @@ function enableLoop() {
 </head>
 <body onLoad="{
    enableLoop();
-   mySound1.play()
-}">
+ }">
 
 <body onKeyDown="{
   location = 'level-1-game-patrick.html'
