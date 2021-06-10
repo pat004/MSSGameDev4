@@ -4,8 +4,6 @@
 
 // Global variables works anywhere in your code
 
-let mySound1 =new Audio('Audio files/gstart.mp3')
-
 document.myNumBullets = 1;
 document.myBulletMax  = 10;
 
@@ -57,7 +55,7 @@ for (let x=1;  x <= document.myBulletMax; x++){
    
 for (let y=2;  y <= document.mySpanMax; y++){   
    if(myHitOther('myBullet'+x, 'mySpan'+y)){
-      ranX1 = Math.floor(Math.random()*window.innerWidth*0.50);
+      ranX1 = Math.floor(Math.random()*window.innerWidth*0.67);
       document.getElementById('myTextScore').value = parseInt(document.getElementById('myTextScore').value) + 1;
       document.getElementById('mySpan'+y).style.left = ranX1 + 256
   }
@@ -91,6 +89,9 @@ function myBulletFire(){
 </script>
 </head>
 <body>
+<body onload="
+mySound1.play()
+"}>
 <body style="background-color:black;color:white;">
 <body  onKeyDown="{
      let myAlphaKey = event.key
@@ -159,7 +160,7 @@ function myBulletFire(){
    <font color=skyblue>Span 5</span><br>
 
 <span title="6"  id="mySpan6" style="position:absolute; left:1100; top:150; width:45; height:30;"> 
-   <font color=lime>Span 6</span><br>
+   <font color=lime>Span 6</font></span><br>
 
 
 
