@@ -1,0 +1,205 @@
+<html>
+<head>
+<script>
+
+// Global variables works anywhere in your code
+
+let mySound1 =new Audio('Audio files/gstart.mp3')
+
+let mySound2 =new Audio('Audio files/clear1.mp3')
+
+document.myNumBullets = 1;
+document.myBulletMax  = 10;
+
+document.mySpanMax = 6;
+   
+
+
+document.myBulletMove = 6   // amount it moves in pixels
+
+document.myBulletDelay = 20 // speed as a delay in milliseconds bigger is slower
+
+document.myBulleTimer = 0;
+
+
+
+// span movement
+
+document.myXmove = 5   // amount it moves in pixels
+document.myYmove = 4
+
+
+
+function myHitOther(my1,my2){
+   left1   = parseInt(document.getElementById(my1).style.left)
+   right1  = left1 + parseInt(document.getElementById(my1).style.width)
+   top1    = parseInt(document.getElementById(my1).style.top)   
+   bottom1 = top1   + parseInt(document.getElementById(my1).style.height)
+   left2   = parseInt(document.getElementById(my2).style.left)
+   right2  = left2 + parseInt(document.getElementById(my2).style.width)
+   top2    = parseInt(document.getElementById(my2).style.top)   
+   bottom2 = top2   + parseInt(document.getElementById(my2).style.height)
+   if ((right1  >=  left2  ) &&      	   
+       (bottom1 >=  top2   ) &&
+       (left1   <=  right2 ) &&
+       (top1    <=  bottom2) ){
+       return true
+   }
+}
+
+
+function myCheckAll(){
+
+for (let x=1;  x <= document.myBulletMax; x++){ 
+
+   if (parseInt(document.getElementById('myBullet'+x).style.left) + 65 > window.innerWidth) {  // if we hit the right wall
+       document.getElementById('myBullet'+x).style.left = document.getElementById('player').style.left
+       document.getElementById('myBullet'+x).style.visibility= 'hidden'
+    }
+   
+for (let y=2;  y <= document.mySpanMax; y++){   
+   if(myHitOther('myBullet'+x, 'mySpan'+y)){
+      ranX1 = Math.floor(Math.random()*window.innerWidth*0.67);
+      document.getElementById('myTextScore').value = parseInt(document.getElementById('myTextScore').value) + 1;
+      document.getElementById('mySpan'+y).style.left = ranX1 + 256
+  }
+}
+
+} // check all bullets finished
+
+
+if(parseInt(document.getElementById('myTextScore').value)  >=20  ){
+    document.getElementById('myTextScore').value = 0
+    mySound2.play()
+    alert('You Win! Next Stage...')
+    location = 'level-2-game-patrick.html'
+  } 
+
+}  
+
+  
+
+
+function myBulletFire(){
+
+  for (let x=1;  x <= document.myBulletMax; x++){
+     // Choose which line to comment out. horizontal fire or veritcal fire
+     // document.getElementById('myBullet'+x).style.left = parseInt(document.getElementById('myBullet'+x).style.left) + document.myBulletMove
+     
+     document.getElementById('myBullet'+x).style.top = parseInt(document.getElementById('myBullet'+x).style.top) - document.myBulletMove
+ }
+
+  myCheckAll()
+}
+
+
+</script>
+</head>
+<body>
+<body onload="{
+mySound2.load()
+mySound1.play()
+}">
+<body style="background-color:black;color:white;">
+<body  onKeyDown="{
+     let myAlphaKey = event.key
+     document.getElementById('myDiv01').innerHTML = 'You typed: ' + myAlphaKey.toLowerCase()
+      if (myAlphaKey.toLowerCase() == 'arrowright') {
+         document.getElementById('player').style.left = parseInt(document.getElementById('player').style.left) + 32
+         myCheckAll()
+     }
+      if (myAlphaKey.toLowerCase() == 'd') {   // go right
+         document.getElementById('player').style.left = parseInt(document.getElementById('player').style.left) + 32
+         myCheckAll()
+      }
+      if (myAlphaKey.toLowerCase() == 'arrowleft') {
+         document.getElementById('player').style.left = parseInt(document.getElementById('player').style.left) - 32
+         myCheckAll()
+     }
+      if (myAlphaKey.toLowerCase() == 'a') {   // go left
+         document.getElementById('player').style.left = parseInt(document.getElementById('player').style.left) - 32
+         myCheckAll()
+      }
+      if (myAlphaKey.toLowerCase() == 'w') {   // go up
+         document.getElementById('player').style.top = parseInt(document.getElementById('player').style.top) - 32
+         myCheckAll()
+      }
+      if (myAlphaKey.toLowerCase() == 's') {   // go down
+         document.getElementById('player').style.top = parseInt(document.getElementById('player').style.top) + 32
+         myCheckAll()
+      }
+}">
+
+<h1 style="border:solid;text-align:center;color:black;font-size:48px;font-family:papyrus;text-shadow: 2px 2px yellow;box-shadow: 2px 2px yellow;">HTML Blaster V</h1>
+
+
+<body onClick="{
+    document.myNumBullets += 1
+    if (document.myNumBullets > document.myBulletMax){
+       document.myNumBullets = 1
+    }
+    document.getElementById('myBullet' + document.myNumBullets).style.left = document.getElementById('player').style.left
+    document.getElementById('myBullet' + document.myNumBullets).style.top = document.getElementById('player').style.top
+    document.getElementById('myBullet' + document.myNumBullets).style.visibility= 'visible'
+    clearInterval(document.myBulletTimer)                    
+    document.myBulletTimer = setInterval( myBulletFire , document.myBulletDelay);
+                        
+}">
+<table>
+<tr><td><font color=lime>Score:</font></td><td> <input id="myTextScore" type=text value=0 ></td></tr>
+
+<tr><td><font color=skyblue>Life:</font></td><td> <input id="myTextLife" type=number value=20 ></td></tr><table>
+
+[Click to Shoot]<div id="myDiv01">...</div>
+
+<span title="1" id="player" style="position:absolute; left:700; top:600; width:45; height:30;" img src="game gifs/ship.png">
+   <br><br>HTML</span><br>
+
+<span title="2"  id="mySpan2" style="position:absolute; left:300; top:150; width:45; height:30;"> 
+   <font color=red>Span 2</span><br>
+
+<span title="3"  id="mySpan3" style="position:absolute; left:500; top:150; width:45; height:30;"> 
+   <font color=pink>Span 3</span><br>
+
+<span title="4"  id="mySpan4" style="position:absolute; left:700; top:150; width:45; height:30;"> 
+   <font color=yellow>Span 4</span><br>
+
+<span title="5"  id="mySpan5" style="position:absolute; left:900; top:150; width:45; height:30;"> 
+   <font color=skyblue>Span 5</span><br>
+
+<span title="6"  id="mySpan6" style="position:absolute; left:1100; top:150; width:45; height:30;"> 
+   <font color=lime>Span 6</font></span><br>
+
+
+
+<span title="b1" id="myBullet1" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
+<font color=red><font size=5><b>^</font></span><br>
+
+<span title="b2" id="myBullet2" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
+<font color=pink><font size=5>^</font></span><br>
+
+<span title="b3" id="myBullet3" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
+<font color=yellow><font size=5>^</font></span><br>
+
+<span title="b4" id="myBullet4" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
+<font color=skyblue><font size=5>^</font></span><br>
+
+<span title="b5" id="myBullet5" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
+<font color=lime><font size=5>^</font></span><br>
+
+<span title="b6" id="myBullet6" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
+<font color=red><font size=5><b>^</font></span><br>
+
+<span title="b7" id="myBullet7" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
+<font color=pink><font size=5>^</font></span><br>
+
+<span title="b8" id="myBullet8" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
+<font color=yellow><font size=5>^</font></span><br>
+
+<span title="b9" id="myBullet9" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
+<font color=skyblue><font size=5>^</font></span><br>
+
+<span title="b10" id="myBullet10" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
+<font color=lime><font size=5>^</font></span><br>
+</body>
+</html>
