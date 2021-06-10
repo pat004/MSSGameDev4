@@ -73,11 +73,14 @@ if(parseInt(document.getElementById('myTextScore').value)  <=-1  ){
   }
 
 if(parseInt(document.getElementById('myTextScore').value)  >=20  ){
-    document.getElementById('myTextScore').value = -999;
+    document.getElementById('myTextScore').value = -999
+    
+  } 
+
+if(parseInt(document.getElementById('myTextScore').value)  <=-1  ){
     alert('You Win! Next Stage...');
     location = 'level-2-game-patrick.html'
   } 
-
 
 }  
 
