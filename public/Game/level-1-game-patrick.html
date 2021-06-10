@@ -68,8 +68,7 @@ for (let y=2;  y <= document.mySpanMax; y++){
 } // check all bullets finished
 
 if(parseInt(document.getElementById('myTextScore').value)  >=20  ){
-    document.getElementById('myTextScore').value = 0;
-    mysound2.load();
+    mySound2.load();
     mySound2.play();
     document.getElementById('myTextScore').value = 0
     alert('You Win! Next Stage...')
