@@ -97,6 +97,14 @@ for (let x=1;  x <= document.myBulletMax; x++){
    document.getElementById('mySpan14').style.left = - 400;
    mySound2.play()
   }
+
+   if(myHitOther('myBullet'+x,'mySpan15')){
+   document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) - 0.0001
+  }
+
+   if(myHitOther('myBullet'+x,'mySpan16')){
+   document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) - 0.0001
+  }
    
 for (let y=2;  y <= document.mySpanMax; y++){   
    if(myHitOther('myBullet'+x, 'mySpan'+y)){
@@ -244,8 +252,11 @@ function myBulletFire(){
       <font color="pink"><b>Heal:</b></font><br>
 <img src="game gifs/shipsize1.png" height=16 width=16><img src="game gifs/shipsize1.png" height=16 width=16><img src="game gifs/shipsize1.png" height=16 width=16><img src="game gifs/shipsize1.png" height=16 width=16></span><br>
 
+<span title="15"  id="mySpan15" style="position:absolute; left:24; top:300; width:45; height:0.1;"> 
+<img src="game gifs/pikachu.gif" height=64 width=64></span><br>
 
-
+<span title="16"  id="mySpan16" style="position:absolute; left:112; top:300; width:45; height:0.1;"> 
+<img src="game gifs/pikachu.gif" height=64 width=64></span><br>
 
 
 <span title="b1" id="myBullet1" style="visibility:hidden; position:absolute; left:100; top:150; width:16; height:16">
